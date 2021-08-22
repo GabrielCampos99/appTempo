@@ -1,0 +1,19 @@
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+
+  & .conteudo-item {
+    margin-top: 3em;
+  }
+
+  img {
+    height: 1em;
+    margin-right: 0.3em;
+  }
+
+  h3 {
+    font-weight: 500;
+  }
+}
