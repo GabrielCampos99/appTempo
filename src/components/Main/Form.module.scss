@@ -1,8 +1,10 @@
 form {
-  margin-top: 2em;
+  margin: 2em 1em 1em 1em;
+
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 input {
@@ -21,6 +23,13 @@ button {
   border-radius: 0.5em;
   border: none;
   margin-left: 1em;
+}
+
+@media screen and (max-width: 408px) {
+  button {
+    margin-top: 2em;
+    width: 15em;
+  }
 }
 
 .custom-shape-divider-top-1629638867 {

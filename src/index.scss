@@ -8,6 +8,12 @@ html {
   font-size: 62.5%;
 }
 
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }

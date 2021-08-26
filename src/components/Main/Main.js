@@ -1,4 +1,5 @@
 import { useRef, useState, useCallback, useEffect } from "react";
+import style from "./Main.module.scss";
 
 import Form from "./Form";
 import Wrapper from "../utilities/Wrapper";
@@ -6,6 +7,8 @@ import Content from "./Content";
 import Footer from "../Footer/Footer";
 
 const Main = (props) => {
+  const [mostrarConteudo, setMostrarConteudo] = useState(false);
+  const [carregando, setCarregando] = useState(false);
   const [inputCidade, setInputCidade] = useState("");
   const [temperaturaCidade, setTemperaturaCidade] = useState();
   const [dia, setDia] = useState();
@@ -25,12 +28,17 @@ const Main = (props) => {
   };
 
   const getTemp = useCallback(async (cidade) => {
+    setCarregando(true);
     const response = await fetch(
       `https://goweather.herokuapp.com/weather/${cidade}`
     );
+
     const data = await response.json();
     setTemperaturaCidade(data.temperature);
     setVentoCidade(data.wind);
+
+    setCarregando(false);
+    setMostrarConteudo(true);
   });
 
   useEffect(() => {
@@ -71,16 +79,26 @@ const Main = (props) => {
         break;
     }
   }, []);
-  return (
-    <Wrapper>
-      <Form onClick={onClickHandler} ref={inputEl} />
+
+  let conteudo = <h3 className={style.textCentered}>Insira uma cidade</h3>;
+  if (mostrarConteudo) {
+    conteudo = (
       <Content
         temperatura={temperaturaCidade}
         vento={ventoCidade}
         cidade={inputCidade}
         dia={dia}
       />
-      <Footer />
+    );
+  }
+  if (carregando) {
+    conteudo = <h3 className={style.textCentered}>Carregando...</h3>;
+  }
+
+  return (
+    <Wrapper>
+      <Form onClick={onClickHandler} ref={inputEl} />
+      {conteudo}
     </Wrapper>
   );
 };

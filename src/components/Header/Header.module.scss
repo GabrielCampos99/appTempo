@@ -11,3 +11,14 @@
   color: white;
   padding: 0.5em;
 }
+
+@media screen and (max-width: 315px) {
+  .header-logo {
+    font-size: 5em;
+  }
+}
+/*
+@media screen and (max-width: 600px) {
+	
+}
+*/
