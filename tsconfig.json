@@ -1,0 +1,61 @@
+/* {
+  "compilerOptions": {
+    "target": "ES5",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+ */
+
+ {
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "declaration": true,
+    "declarationMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noImplicitAny": false,
+    "noEmit": true,
+    "jsx": "react",
+    "typeRoots": [
+      "./types",
+      "./node_modules/@types"
+    ],
+    "rootDir": "./src",
+    "strictPropertyInitialization": false
+  },
+  "include": [
+    "src"
+  ]
+}
